@@ -15,30 +15,9 @@ from pdf_reader import extract_text_from_pdf
 time.sleep(0.3)
 
 # ── CSS ──────────────────────────────────────────────────────────────────────
-st.markdown("""
-<style>
-.main-title{font-size:2rem;font-weight:700;color:#1a1a2e;}
-.sub-title{font-size:1rem;color:#555;margin-top:-10px;}
-.section-hdr{font-size:1.1rem;font-weight:600;color:#2c3e50;
-    border-left:4px solid #4a90d9;padding-left:10px;margin:1.2rem 0 0.6rem;}
-.summary-box{background:#f0f4ff;border-radius:10px;
-    padding:1.2rem 1.5rem;font-size:0.95rem;line-height:1.75;color:#222;}
-.tag-pill{display:inline-block;background:#dbeafe;color:#1e40af;
-    border-radius:20px;padding:3px 12px;font-size:0.78rem;font-weight:600;margin:3px 3px 0 0;}
-.cat-pill{display:inline-block;background:#ede9fe;color:#5b21b6;
-    border-radius:20px;padding:4px 14px;font-size:0.85rem;font-weight:700;margin-bottom:10px;}
-.impact-card{border-radius:10px;padding:1rem 1.2rem;font-size:0.9rem;line-height:1.65;}
-.short-card{background:#eff6ff;border-left:4px solid #3b82f6;}
-.mid-card{background:#fffbeb;border-left:4px solid #f59e0b;}
-.long-card{background:#f0fdf4;border-left:4px solid #22c55e;}
-.stake-card{background:#fafafa;border:1px solid #e5e7eb;
-    border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:0.6rem;}
-.pos-item{color:#166534;font-size:0.9rem;margin:4px 0;}
-.risk-item{color:#991b1b;font-size:0.9rem;margin:4px 0;}
-.footer{text-align:center;color:#aaa;font-size:0.8rem;
-    margin-top:3rem;padding-top:1rem;border-top:1px solid #eee;}
-</style>
-""", unsafe_allow_html=True)
+# Load CSS from external file
+with open('ERIA/.streamlit/style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
 SAMPLE_TEXT = """UGC Circular No. F.1-1/2023 dated March 2024
